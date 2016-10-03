@@ -123,13 +123,11 @@ class Game():
 						cell.alive = True
 				cell.neighbors = 0
 
-
+glider = [[0,1,0],
+		  [0,0,1],
+		  [1,1,1]]
 
 if __name__ == "__main__":
-    glider = [[0,1,0],
-		      [0,0,1],
-		      [1,1,1]]
-
 	game = Game(w=20, h=20)
 	# game = Game(w=20, h=20, insert=glider)
 	game.run()
