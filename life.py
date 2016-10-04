@@ -25,9 +25,9 @@ class Grid():
             for row in xrange(h):
                 for col in xrange(w):
                     if row < len(insert) and col < len(insert[0]):
-                        self.cells[row][col] = insert[row][col]
+                        self.cells[row][col] = Cell(insert[row][col])
                     else:
-                        self.cells[row][col] = 0
+                        self.cells[row][col] = Cell(0)
         else:
             self.cells = [[Cell(getrandbits(1)) for x in xrange(w)] for y in xrange(h)]
 
@@ -123,11 +123,14 @@ class Game():
                         cell.alive = True
                 cell.neighbors = 0
 
+#            % 
+#              %
+#          % % %
 glider = [[0,1,0],
           [0,0,1],
           [1,1,1]]
 
 if __name__ == "__main__":
-    game = Game(w=20, h=20)
-    # game = Game(w=20, h=20, insert=glider)
+    #game = Game(w=20, h=20)
+    game = Game(w=20, h=20, insert=glider)
     game.run()
